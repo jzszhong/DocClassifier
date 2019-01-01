@@ -1,0 +1,142 @@
+body, html {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 1024px;
+    font-family: "Microsoft Yahei", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+#page_header {
+    position: relative;
+    height: 50px;
+    background-color: #f3f3f3;
+    box-shadow: 0px 3px 7px #c0c0c0;
+}
+
+#page_text {
+    position: absolute;
+    top: calc((50px - 20px) / 2);
+    left: calc((100% - 123px) / 2);
+}
+
+#upload_window {
+    position: absolute;
+    height: 60%;
+    width: 23%;
+    top: 20%;
+    left: 1%;
+    border: 2px solid #f3f3f3;  
+}
+
+#upload_window_header_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 123px) / 2);
+}
+
+#upload_window_body_text {
+    position: absolute;
+    top: 30%;
+    left: calc((100% - 91px) / 2);
+}
+
+#upload_form {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: calc((100% - 318px) / 2);
+}
+
+#file_browser {
+    border: 2px solid #f3f3f3;  
+}
+
+#file_window {
+    position: absolute;
+    height: 60%;
+    width: 50%;
+    top: 20%;
+    left: calc(24% + 10px);
+    border: 2px solid #f3f3f3;  
+}
+
+#file_list_header_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 58px) / 2);
+}
+
+#file_property {
+    position: absolute;
+    height: 60%;
+    width: 23%;
+    top: 20%;
+    left: calc(74% + 20px);
+    border: 2px solid #f3f3f3; 
+}
+
+#file_property_header_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 109px) / 2);
+}
+
+#file_title_cell {
+    display: inline-block;
+    margin-top: 4%;
+    width: 75%;
+    margin-left: 10%;
+}
+
+#file_text {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#file_cell {
+    display: inline-flex;
+    margin-top: 4%;
+    width: 100%;
+    height: 30px;
+}
+
+#file_cell img {
+    width: 30px;
+    height: 30px;
+    margin-left: 3%;
+}
+
+#file_cell input {
+    margin-left: 3%;
+}
+
+#file_info {
+    background-color: #f3f3f3;
+    height: 30px;
+    width: 75%;
+    margin-left: calc((100% - 75%) / 2 - 5% - 34px);
+}
+
+.header {
+    height: 40px;
+    background-color: #f3f3f3;
+    box-shadow: 0px 3px 7px #c0c0c0;
+}
+
+.body {
+    height: calc(100% - 40px);
+    overflow: auto;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #c0c0c0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.tag span {
+    color: white;
+}

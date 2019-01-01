@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Home</title>
+         <script src="{% static "categorization/script.js" %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static "categorization/style.css" %}">
+    </head>
+
+    <body>
+        <div id="page_header">
+            <span id="page_text">Document Page</span>
+        </div>
+
+        <div id="upload_window">
+            <div class="header">
+                <span id="upload_window_header_text">Upload Window</span>
+            </div>
+
+            <div class="body">
+                <span id="upload_window_body_text">Upload files</span>
+                <form id="upload_form" action="/classifier/index/" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input id="file_browser" type="file" name="file">
+                    <input type="submit" value="Upload" name="submit" onclick="showLoadingPage()">
+                </form>
+            </div>
+        </div>
+
+        <div id="file_window">
+            <div class="header">
+                <span id="file_list_header_text">All Files</span>
+            </div>
+
+            <div class="body">
+                <div id="file_title_cell">
+                    <span id="file_text">File Name</span>
+                    <span id="file_text">Uploaded Date&nbsp;&nbsp;</span>
+                    <span id="file_text">User</span>
+                    <span id="file_text">Size</span>
+                </div>
+
+                {% for file in meta_data %}
+                    <div id="file_cell">
+                        <img src="{% static "categorization/imgs/file_icon.svg" %}">
+                        
+                        <div id="file_info">
+                            <a href="/classifier/index?id={{forloop.counter0}}">
+                                <span id="file_text">{{ file.doc_name }}</span>
+                                <span id="file_text">{{ file.doc_date }}</span>
+                                <span id="file_text">B1</span>
+                                <span id="file_text">{{ file.doc_size }}B</span>
+                            </a>
+                        </div>
+                        
+                        <input type="button" value="Download" name="download" onclick="window.location='/classifier/index?dl={{forloop.counter0}}';">
+                      
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div id="file_property">
+            <div class="header">
+                <span id="file_property_header_text">File Properties</span>
+            </div>
+
+            <div class="body">
+                <br><span>File Name: {{ file_info.name }}</span><br>
+                <br><span>Uploaded Date: {{ file_info.date }}</span><br>
+                <br><span>User: B1</span><br>
+                <br><span>Tags:</span><br><br>
+
+                {% for tag in file_info.tags %}
+                <div class="tag">
+                     <span>{{ tag }}</span>
+                </div><br>
+                {% endfor %}             
+            </div>
+        </div>
+
+
+        <div id="loading_page">
+            <div id="result_window">
+                <div id="title_div">
+                    <span id="title_processing_text">Processing</span>
+                </div>
+                
+                <img id="loading_img" src="{% static "categorization/imgs/loading.gif" %}"/>
+            </div>
+        </div>
+    
+        {% if results != None %}
+        <div id="result_page">
+            <div id="result_window">
+                <div id="title_div">
+                    <span id="title_text">Classifcation Results by LR</span>
+                    <img src="{% static "categorization/imgs/close_icon.svg"%}" onclick="hideResultPage()"/>
+                </div>
+                
+                <div id="result_div">
+                    <img src="{% static "categorization/imgs/file_icon.svg" %}">
+
+                    <div id="tag_div">
+                        {% for result in results %}
+                        <div class="tag">
+                             <span>
+                                {{ result.tag }} <br>
+                                Probability: {{ result.proba }}
+                            </span>
+                        </div><br>
+                        {% endfor %}
+                    </div>
+
+                    <input type="button" value="Confirm" onclick="window.location='/classifier/index?save';">
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+    
+    </body>
+</html>

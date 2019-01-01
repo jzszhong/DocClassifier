@@ -1,0 +1,245 @@
+body, html {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 1024px;
+    font-family: "Microsoft Yahei", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+#page_header {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background-color: #f3f3f3;
+    box-shadow: 0px 3px 7px #c0c0c0;
+}
+
+#page_text {
+    position: absolute;
+    top: calc((50px - 20px) / 2);
+    left: calc((100% - 123px) / 2);
+}
+
+#upload_window {
+    position: absolute;
+    height: 60%;
+    width: 23%;
+    top: 20%;
+    left: 1%;
+    border: 2px solid #f3f3f3;  
+}
+
+#upload_window_header_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 123px) / 2);
+}
+
+#upload_window_body_text {
+    position: absolute;
+    top: 30%;
+    left: calc((100% - 91px) / 2);
+}
+
+#upload_form {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: calc((100% - 318px) / 2);
+}
+
+#file_browser {
+    border: 2px solid #f3f3f3;  
+}
+
+#file_window {
+    position: absolute;
+    height: 60%;
+    width: 50%;
+    top: 20%;
+    left: calc(24% + 10px);
+    border: 2px solid #f3f3f3;  
+}
+
+#file_list_header_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 58px) / 2);
+}
+
+#file_property {
+    position: absolute;
+    height: 60%;
+    width: 23%;
+    top: 20%;
+    left: calc(74% + 20px);
+    border: 2px solid #f3f3f3; 
+}
+
+#file_property_header_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 109px) / 2);
+}
+
+#file_title_cell {
+    display: inline-block;
+    margin-top: 4%;
+    width: 75%;
+    margin-left: 10%;
+}
+
+#file_text {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#file_cell {
+    display: inline-flex;
+    margin-top: 4%;
+    width: 100%;
+    height: 30px;
+}
+
+#file_cell img {
+    width: 30px;
+    height: 30px;
+    margin-left: 3%;
+}
+
+#file_cell input {
+    margin-left: 3%;
+}
+
+#file_info {
+    background-color: #f3f3f3;
+    height: 30px;
+    width: 75%;
+    margin-left: calc((100% - 75%) / 2 - 5% - 34px);
+    transition: box-shadow 0.3s;
+}
+
+#file_info:hover {
+    box-shadow: 0px 3px 5px #c0c0c0;
+    transition: box-shadow 0.2s;
+}
+
+.header {
+    height: 40px;
+    background-color: #f3f3f3;
+    box-shadow: 0px 3px 7px #c0c0c0;
+}
+
+.body {
+    height: calc(100% - 40px);
+    overflow: auto;
+}
+
+.tag {
+    background-color: #c0c0c0;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.tag span {
+    color: white;
+}
+
+#file_info a {
+    text-decoration: none;
+    color: black;
+}
+
+#result_page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#result_window {
+    position: absolute;
+    height: 45%;
+    width: 35%;
+    top: 20%;
+    left: calc((100% - 35%) / 2);
+    border: 2px solid #f3f3f3;
+    border-radius: 10px; 
+    background-color: white;
+}
+
+#title_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 202px) / 2);
+}
+
+#title_processing_text {
+    position: absolute;
+    top: calc((40px - 20px) / 2);
+    left: calc((100% - 82px) / 2);
+}
+
+#title_div {
+    height: 40px;
+    box-shadow: 0px 3px 7px #c0c0c0;
+    border-radius: 10px; 
+    background-color: #f3f3f3;
+}
+
+#title_div img {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right:0;
+    top: 5px;
+}
+
+#result_div img {
+    width: 100px;
+    height: 100px;
+    margin-top: 4%;
+}
+
+#result_div {
+    display: inline-flex;
+    height: calc(100% - 40px);
+    width: 100%;
+    overflow: auto;
+}
+
+#result_div input {
+    position: absolute;
+    top: 90%;
+    left: calc((100% - 60%) / 2);
+    width: 65%;
+}
+
+#tag_div {
+    margin-top: 4%;
+    width: 65%;
+    margin-left: calc((100% - 60%) / 2 - 100px);
+    height: 75%;
+    overflow: auto;
+}
+
+#loading_page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: none;
+}
+
+#loading_img {
+    width: 200px;
+    height: 200px;
+    margin-top: 8%;
+    margin-top: 8%
+}
